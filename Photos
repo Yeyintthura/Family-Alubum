@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Family Album</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #6a5acd;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+        h1 {
+            margin: 0;
+        }
+        .album {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .photo-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            margin: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            text-align: center;
+        }
+        .photo-card img {
+            width: 100%;
+            height: auto;
+        }
+        .photo-card p {
+            margin: 10px 0 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>My Family Album</h1>
+        <p>A memory book of our cherished moments</p>
+    </header>
+
+    <div class="album">
+        <!-- Photo Card 1 -->
+        <div class="photo-card">
+            <img src="image1.jpg" alt="Family Photo 1">
+            <p>Family Reunion - 2020</p>
+        </div>
+
+        <!-- Photo Card 2 -->
+        <div class="photo-card">
+            <img src="image2.jpg" alt="Family Photo 2">
+            <p>Vacation at the Beach - 2019</p>
+        </div>
+
+        <!-- Photo Card 3 -->
+        <div class="photo-card">
+            <img src="image3.jpg" alt="Family Photo 3">
+            <p>Graduation Day - 2018</p>
+        </div>
+
+        <!-- Add more photo cards as needed -->
+    </div>
+
+</body>
+</html>
