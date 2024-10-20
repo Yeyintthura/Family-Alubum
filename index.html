@@ -6,56 +6,91 @@
     <title>My Family Album</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f4f4f9;
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
-            min-height: 100vh; /* Ensure body takes the full height of the viewport */
+            min-height: 100vh;
         }
         header {
-            background-color: #6a5acd;
+            background: linear-gradient(45deg, #6a5acd, #836fff);
             color: white;
             text-align: center;
-            padding: 1em 0;
+            padding: 2em 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
         h1 {
             margin: 0;
+            font-size: 3em;
+            font-weight: bold;
+        }
+        p.header-description {
+            font-size: 1.2em;
+            margin-top: 0.5em;
         }
         .album {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             padding: 20px;
-            flex-grow: 1; /* Makes sure the album expands and takes available space */
+            max-width: 1200px;
+            margin: 20px auto;
+            gap: 20px;
         }
         .photo-card {
             background-color: white;
-            border: 1px solid #ddd;
-            margin: 10px;
+            border: none;
+            border-radius: 15px;
             padding: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
             width: 250px;
             text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .photo-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
         }
         .photo-card img {
             width: 100%;
             height: auto;
-            transition: transform 0.3s ease; /* Smooth zoom transition */
+            border-radius: 10px;
+            transition: transform 0.3s ease;
             cursor: pointer;
         }
+        .photo-card img:hover {
+            transform: scale(1.05); /* Slight zoom on hover */
+        }
         .zoom {
-            transform: scale(3); /* Increase zoom level */
+            transform: scale(3); /* Increased zoom level */
         }
         .photo-card p {
-            margin: 10px 0 0;
+            margin-top: 15px;
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #333;
         }
         footer {
             background-color: #6a5acd;
             color: white;
             text-align: center;
-            padding: 10px 0;
+            padding: 15px 0;
+            margin-top: auto;
+            font-size: 0.9em;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .album {
+                flex-direction: column;
+                align-items: center;
+            }
+            .photo-card {
+                width: 80%;
+                margin-bottom: 20px;
+            }
         }
     </style>
 </head>
@@ -63,7 +98,7 @@
 
     <header>
         <h1>My Family Album</h1>
-        <p>A memory book of our cherished moments</p>
+        <p class="header-description">A collection of our most cherished moments together</p>
     </header>
 
     <div class="album">
@@ -92,7 +127,7 @@
 
     <!-- Footer Section -->
     <footer>
-        <p>© bobolimbu 2024 My Family Album. All rights reserved. Please contact bobolimbu@gmail.com.</p>
+        <p>© 2024 My Family Album. All rights reserved.</p>
     </footer>
 
     <script>
