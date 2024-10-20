@@ -10,7 +10,6 @@
             background-color: #f4f4f9;
             margin: 0;
             padding: 0;
-        
         }
         header {
             background-color: #6a5acd;
@@ -39,6 +38,11 @@
         .photo-card img {
             width: 100%;
             height: auto;
+            transition: transform 0.3s ease; /* Add transition for smooth zoom */
+            cursor: pointer;
+        }
+        .zoom {
+            transform: scale(2); /* Zoom level */
         }
         .photo-card p {
             margin: 10px 0 0;
@@ -56,8 +60,7 @@
         <!-- Photo Card 1 -->
         <div class="photo-card">
             <img src="family_photo1.jpg" alt="Family Photo 1">
-             <img src="family_photo4.jpg" alt="Family Photo 4">
-            
+            <img src="family_photo4.jpg" alt="Family Photo 4">
             <p>Family Reunion - 2020</p>
         </div>
 
@@ -76,6 +79,18 @@
 
         <!-- Add more photo cards as needed -->
     </div>
+
+    <script>
+        // Get all images inside the photo cards
+        const images = document.querySelectorAll('.photo-card img');
+
+        images.forEach(img => {
+            // Toggle zoom on double-click
+            img.addEventListener('dblclick', function() {
+                img.classList.toggle('zoom');
+            });
+        });
+    </script>
 
 </body>
 </html>
